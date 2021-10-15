@@ -8,33 +8,36 @@ button.innerText = 'Save';
 body.append(droplist);
 body.append(button);
 
-const droplist_content = [
-    {value: 'Home 1', selected:true},
-    {value: 'Home 2', selected:true},
-    {value: 'Home 3', selected:true},
-    {value: 'Home 4', selected:true},
+const droplistContent = [
+    { value: 'Home 1' },
+    { value: 'Home 2' },
+    { value: 'Home 3' },
+    { value: 'Home 4' }
 ];
 
 
-droplist_content.map(item => {
+droplistContent.map(item => {
     const option = document.createElement('option');
     option.innerText = item.value;
     droplist.append(option);
-    
-    droplist.addEventListener('click', ()=> {
-    input.value = droplist.value})
+
+    droplist.addEventListener('click', () => {
+        input.value = droplist.value
+    })
     console.log()
 })
 input.value = droplist.value
+console.log('typeof droplist: ', typeof droplist);
 
-    //заменяет текущее значение option в droplist на input.value
-    button.addEventListener('click', ()=> {
-        for (let i=0; i< droplist.length; i++){
-            if (droplist[i].value == droplist.value){
-                droplist[i].innerText = input.value}
+//заменяет текущее значение option в droplist на input.value
+button.addEventListener('click', () => {
+    for (let i = 0; i < droplist.length; i++) {
+        if (droplist[i].value == droplist.value) {
+            droplist[i].innerText = input.value
         }
-    })
-    
+    }
+})
+
 
 
 
