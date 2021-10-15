@@ -24,10 +24,8 @@ droplistContent.map(item => {
     droplist.addEventListener('click', () => {
         input.value = droplist.value
     })
-    console.log()
 })
 input.value = droplist.value
-console.log('typeof droplist: ', typeof droplist);
 
 //заменяет текущее значение option в droplist на input.value
 button.addEventListener('click', () => {
