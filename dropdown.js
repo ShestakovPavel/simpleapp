@@ -12,26 +12,27 @@ const droplistContent = [
     { value: 'Home 1' },
     { value: 'Home 2' },
     { value: 'Home 3' },
-    { value: 'Home 4' }
+    { value: 'Home 4' },
 ];
 
 
-droplistContent.map(item => {
+droplistContent.forEach(item => {
     const option = document.createElement('option');
     option.innerText = item.value;
     droplist.append(option);
-
-    droplist.addEventListener('click', () => {
-        input.value = droplist.value
-    })
 })
-input.value = droplist.value
+
+droplist.addEventListener('change', () => {
+    input.value = droplist.value;
+})
+
+input.value = droplist.value;
 
 //заменяет текущее значение option в droplist на input.value
 button.addEventListener('click', () => {
     for (let i = 0; i < droplist.length; i++) {
         if (droplist[i].value == droplist.value) {
-            droplist[i].innerText = input.value
+            droplist[i].innerText = input.value;
         }
     }
 })
