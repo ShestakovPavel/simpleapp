@@ -29,6 +29,7 @@ const droplistContent = [
 droplistContent.forEach(item => {
     const option = document.createElement('option');
     option.innerText = item.value;
+    option.value = item.value;
     droplist.append(option);
 })
 
@@ -40,15 +41,15 @@ input.value = droplist.value;
 
 //заменяет текущее значение option в droplist на input.value
 button.addEventListener('click', () => {
-    document.querySelector(`option[value="${document.querySelector('select').value}"]`)
-        let str = input.value;
-        if (!str.trim()){
+    let optionValue = document.querySelector(`option[value="${document.querySelector('select').value}"]`);
+        if (!input.value.trim()){
             input.classList.add('error');
-            droplist[i].innerText = droplist.value;
         }
         else {
-            droplist[i].innerText = input.value;
-            input.style.border = null;
+            optionValue.value = input.value.trim();
+            optionValue.innerText = optionValue.value;
+            droplist.value = optionValue.innerHTML;
+            input.classList.remove('error');
             }
     }
 )
