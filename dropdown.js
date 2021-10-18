@@ -1,5 +1,4 @@
 const body = document.getElementById('root');
-//const input = document.getElementById('input');
 
 const droplist = document.createElement('select');
 const button = document.createElement('button');
@@ -12,8 +11,8 @@ button.innerText = 'Save';
 paragraph1.innerText = 'Home';
 body.append(paragraph1);
 body.append(droplist);
-///////////
-paragraph2.innerText = 'Edit Home' ;
+
+paragraph2.innerText = 'Edit Home';
 body.append(paragraph2);
 body.append(input)
 body.append(button);
@@ -41,26 +40,15 @@ input.value = droplist.value;
 
 //заменяет текущее значение option в droplist на input.value
 button.addEventListener('click', () => {
-    for (let i = 0; i < droplist.length; i++) {
-        if (droplist[i].value == droplist.value){
-            let str = input.value;
-            if (!str.trim()){
-                input.style.border = '1px solid #DC143C'
-                droplist[i].innerText = droplist.value;
+    document.querySelector(`option[value="${document.querySelector('select').value}"]`)
+        let str = input.value;
+        if (!str.trim()){
+            input.classList.add('error');
+            droplist[i].innerText = droplist.value;
+        }
+        else {
+            droplist[i].innerText = input.value;
+            input.style.border = null;
             }
-                else {
-                droplist[i].innerText = input.value;
-                input.style.backgroundColor = null;
-                }s
     }
-}})
-
-
-
-/*var colorArray = document.getElementsByClassName('colDiv');
-
-colorArray[1].style.backgroundColor = '#AA0000';
-
-if (droplist[i].value == droplist.value) {
-            droplist[i].innerText = input.value;     
-        }     */ 
+)
